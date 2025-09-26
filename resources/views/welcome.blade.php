@@ -1,149 +1,110 @@
-@php
-    $systemSetting = App\Models\SystemSetting::first();
-@endphp
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    {{-- FAVICON --}}
-    <link rel="shortcut icon" type="image/x-icon"
-        href="{{ isset($systemSetting->favicon) && !empty($systemSetting->favicon) ? asset($systemSetting->favicon) : asset('frontend/logo.png') }}" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+@extends('layouts.app')
 
-        html,
-        body {
-            height: 100%;
-            width: 100%;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
+@section('content')
 
-        body {
-            /* background-image: url('{{ asset('frontend/mockup_image.png') }}'); */ /*For Mockup Uncomment IT*/
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #3b82f6;
-            text-align: center;
-        }
+@if(session('t-success'))
+    <div 
+        x-data="{ show: true }" 
+        x-show="show" 
+        x-transition:enter="transform transition ease-out duration-500"
+        x-transition:enter-start="translate-x-40 opacity-0"
+        x-transition:enter-end="translate-x-0 opacity-100"
+        x-transition:leave="transform transition ease-in duration-500"
+        x-transition:leave-start="translate-x-0 opacity-100"
+        x-transition:leave-end="translate-x-40 opacity-0"
+        x-init="setTimeout(() => show = false, 4000)" 
+        class="fixed top-5 left-5 bg-green-600 text-pink-500 px-6 py-4 rounded-xl shadow-lg z-50 flex items-center gap-2"
+    >
+        <!-- Success Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M16.704 5.293a1 1 0 010 1.414L8.414 15 5 11.586a1 1 0 011.414-1.414L8.414 12.172l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg>
+        <span>{{ session('t-success') }}</span>
+    </div>
+@endif
 
-        .Box{
-            display: block; /*For Display None IT*/
-        }
 
-        .container {
-            text-align: center;
-        }
 
-        h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            color: white;
-        }
+<!-- Hero Section -->
+<section id="home" class="hero text-center py-32 bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 fade-in">
+    <h2 class="text-5xl font-bold mb-4">{{ $intro->title }}<span class="text-pink-500"> {{ $intro->subtitle }}</span></h2>
+    <p id="typing-role" class="text-xl mb-6"></p>
+    <a href="#projects" class="px-6 py-3 bg-pink-500 rounded hover:bg-pink-600 transition-colors">View My Work</a>
+</section>
 
-        .link {
-            font-size: 1rem;
-            margin-top: 1rem;
-            color: white;
-            text-decoration: none;
-        }
+<!-- About Section -->
+<section id="about" class="about py-20 text-center max-w-4xl mx-auto px-4 text-gray-300 fade-in">
+    <h2 class="text-3xl font-bold text-pink-500 mb-6">About Me</h2>
+    <img src="{{ asset($about->image) }}" alt="Profile Picture" class="w-36 h-36 mx-auto rounded-full border-4 border-pink-500 mb-6">
+    <p class="text-gray-300 text-lg">
+        {!! $about->description !!}
+    </p>
+</section>
+<!-- About Section -->
 
-        .author {
-            text-decoration: none;
-            color: white;
-        }
 
-        .author:hover {
-            text-decoration: underline;
-        }
+<section id="skills" class="py-20 max-w-5xl mx-auto px-4 fade-in">
+    <h2 class="text-3xl font-bold text-pink-500 text-center mb-12">Speciality & Skills</h2>
+    <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto px-4">
+        @foreach($skills as $skill)
+            <div class="bg-gray-800 px-4 py-2 rounded shadow font-medium transform transition-transform hover:scale-105 hover:bg-pink-500 hover:text-white cursor-default">
+                {{ $skill->title }}
+            </div>
+        @endforeach
+    </div>   
+</section>
 
-        .icon {
-            margin-right: 0.25rem;
-            vertical-align: middle;
-        }
 
-        .text-md {
-            font-size: 1rem;
-        }
+<!-- Projects Section -->
+<section id="projects" class="py-20 max-w-5xl mx-auto px-4 fade-in">
+    <h2 class="text-3xl font-bold text-pink-500 text-center mb-12">Projects</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+        @foreach($projects as $project)
+        <a href="{{ $project['link'] }}" target="_blank" class="group">
+            <div class="project relative bg-gray-800 rounded shadow overflow-hidden hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                <img src="{{ asset($project->image) }}" alt="{{ $project->title }}" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-pink-500 text-xl font-semibold mb-2 group-hover:underline">{{ $project->title }}</h3>
+                    <p class="text-gray-300 text-sm">
+                        {!! \Illuminate\Support\Str::limit($project->description, 100) !!}
+                    </p>
+                </div>
+            </div>
+        </a>
+        @endforeach
+    </div>
+</section>
 
-        .mt-4 {
-            margin-top: 1rem;
-        }
+<!-- Resume Section -->
+<section id="resume" class="py-20 fade-in bg-gray-900">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-pink-500 mb-4">{{ $resume->title }}</h2>
+        <p class="text-gray-300 mb-8 text-lg">
+            {{ $resume->sub_title }}
+        </p>
+            <div class="flex items-center justify-center gap-4">
+                
+                <a href="{{ asset($resume->file) }}" download class="px-6 py-3 bg-pink-500 text-white rounded-lg font-semibold hover:bg-pink-600 transition-colors">
+                    Download Resume
+                </a>
+            </div>
 
-        .text-white {
-            color: white;
-        }
-
-        .bg-blue-500 {
-            background-color: #3b82f6;
-        }
-
-        .login-btn,
-        .dashboard-btn {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            padding: 0.8em 2em;
-            font-size: 1.2em;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.7);
-            text-decoration: none;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .login-btn:hover,
-        .dashboard-btn:hover {
-            background-color: rgba(0, 0, 0, 0.9);
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 600px) {
-
-            .login-btn,
-            .dashboard-btn {
-                padding: 0.6em 1.5em;
-                font-size: 1em;
-                bottom: 10px;
-                left: 10px;
-            }
-        }
-    </style>
-</head>
-
-<body class="flex items-center justify-center w-screen h-screen text-center bg-blue-500">
-    <div class="Box">
-        <h1 class="text-6xl font-bold text-white">Welcome Admin</h1>
-        <p class="mt-4 text-white text-md">
-            Use your login credential to access your dashboard.❤️
+        <p class="text-gray-400 mt-4 text-sm">
+            PDF format | Last updated: <span class="text-pink-500">{{ $resume->updated_year }}</span>
         </p>
     </div>
-    <div>
-        @if (Route::has('login'))
-            @auth
-                <a href="{{ route('admin.dashboard') }}" class="dashboard-btn">
-                    Dashboard
-                </a>
-            @else
-                <a href="{{ route('login') }}" class="login-btn">
-                    Log in
-                </a>
-            @endauth
-        @endif
-    </div>
-</body>
+</section>
 
-</html>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 max-w-md mx-auto px-4 text-gray-100 fade-in">
+    <h2 class="text-3xl font-bold text-pink-500 text-center mb-6">Contact Me</h2>
+    <form action="{{ route('contact.send') }}" method="POST" class="flex flex-col gap-4">
+        @csrf
+        <input type="text" name="name" placeholder="Your Name" class="p-3 rounded bg-gray-800 text-gray-100" required>
+        <input type="email" name="email" placeholder="Your Email" class="p-3 rounded bg-gray-800 text-gray-100" required>
+        <textarea name="message" placeholder="Your Message" class="p-3 rounded bg-gray-800 text-gray-100" required></textarea>
+        <button type="submit" class="px-6 py-3 bg-pink-500 rounded hover:bg-pink-600 transition-colors">Send Message</button>
+    </form>
+</section>
+@endsection

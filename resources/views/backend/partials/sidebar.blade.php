@@ -127,6 +127,61 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div data-kt-menu-trigger="click"
+                    class="menu-item {{ request()->routeIs(['introduction.index','portfolio.about.edit','portfolio.skill.*','project.*','resume.*']) ? 'active show' : '' }} menu-accordion">
+                    <span class="menu-link">
+                        <span class="menu-icon">
+                            <i class="fa-solid fa-briefcase fs-2"></i>
+                        </span>
+                        <span class="menu-title">Portfolio Content</span>
+                        <span class="menu-arrow"></span>
+                    </span>
+                    <div class="menu-sub menu-sub-accordion">
+                        <div class="menu-item">
+                            <a href="{{ route('introduction.index') }}" class="menu-link {{ request()->routeIs('introduction.*') ? 'active' : '' }}">
+                                <span class="menu-icon">
+                                    <i class="fas fa-book-open"></i>
+                                </span>
+                                <span class="menu-title">Introduction</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="{{ route('portfolio.about.edit') }}" class="menu-link {{ request()->routeIs('portfolio.about.*') ? 'active' : '' }}">
+                                <span class="menu-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                                <span class="menu-title">About Section</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="{{ route('portfolio.skill.index') }}" class="menu-link {{ request()->routeIs('portfolio.skill.*') ? 'active' : '' }}">
+                                <span class="menu-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </span>
+                                <span class="menu-title">Skills</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="{{ route('project.index') }}" class="menu-link {{ request()->routeIs('project.*') ? 'active' : '' }}">
+                                <span class="menu-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </span>
+                                <span class="menu-title">Projects</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="{{ route('resume.edit') }}" class="menu-link {{ request()->routeIs('resume.*') ? 'active' : '' }}">
+                                <span class="menu-icon">
+                                    <i class="fas fa-file-alt"></i> <!-- You can replace the icon if needed -->
+                                </span>
+                                <span class="menu-title">Resume</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
