@@ -8,14 +8,14 @@
 
 ## Contributor 
 
--   <a href="https://github.com/Faheem07" target="_blank">MD.Abed Hasan Fahim</a>
+-   <a href="https://github.com/Faheem2407" target="_blank">MD.Abed Hasan Fahim</a>
 
 ## Installation 
 
 To Install & Run This Project You Have To Follow the following Steps:
 
 ```sh
-git clone https://github.com/Faheem07/Custom-Portfolio-Template.git
+git clone https://github.com/Faheem2407/Custom-Portfolio-Template.git
 ```
 
 ```sh
