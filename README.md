@@ -1,25 +1,25 @@
 <p align="center">
-    <h1 align="center">❤️Laravel API🚀 Stater Kit❤️</h1>
+    <h1 align="center">Laravel Portfolio Template</h1>
 </p>
 
-## Introduction 😍
+## Introduction 
 
-<p> A Laravel starter kit with an awesome admin panel setup, user login & logout, registration, status, delete, profile settings and system information, and many more. </p>
+<p> A Laravel admin panel setup, admin login & logout, profile settings and system information management, and many more for managing custom portfolio. </p>
 
-## Contributor 😎
+## Contributor 
 
--   <a href="https://github.com/mizanurmillon" target="_blank">Md Mizanur Rahman</a>
+-   <a href="https://github.com/Faheem07" target="_blank">MD.Abed Hasan Fahim</a>
 
-## Installation 🤷‍♂
+## Installation 
 
 To Install & Run This Project You Have To Follow the following Steps:
 
 ```sh
-git clone https://github.com/mizanurmillon/Laravel-Stater-Kit-Craft.git
+git clone https://github.com/Faheem07/Custom-Portfolio-Template.git
 ```
 
 ```sh
-cd Laravel-Stater-Kit-Craft
+cd Custom-Portfolio-Template.git
 ```
 
 ```sh
@@ -46,5 +46,4 @@ php artisan serve
 For Admin Login `http://127.0.0.1:8000/admin` <br>
 Admin gmail = `admin@admin.com` & password = `12345678`
 
-For User Login `http://127.0.0.1:8000/admin` <br>
-Admin gmail = `user@user.com` & password = `12345678`
+
