@@ -1,17 +1,24 @@
 <p align="center">
-    <h1 align="center">Laravel Portfolio Template</h1>
+    <h1 align="center">Fahim's Portfolio</h1>
 </p>
 
-## Introduction 
+## Introduction  
 
-<p>A Laravel admin panel setup with admin login/logout, profile settings, system information management, and more for managing a custom portfolio.</p>
+Hello, I’m **Fahim**  
+**Laravel Developer | Backend Specialist | Problem Solver**  
 
-## Contributor 
+This is my personal portfolio showcasing my work, skills, and projects.  
 
--   <a href="https://github.com/Faheem2407" target="_blank">MD. Abed Hasan Fahim</a>
+## Contributor  
 
-## Preview  
+- <a href="https://github.com/Faheem2407" target="_blank">MD. Abed Hasan Fahim</a>  
+
+## Live Preview  
 
 <p align="center">
-    <img src="https://faheem.portfolio.dev.creativekey.net/" alt="Portfolio Preview" width="800">
-</p>
+  <a href="https://faheem.portfolio.dev.creativekey.net/" target="_blank">
+    <img src="https://faheem.portfolio.dev.creativekey.net/backend/images/portfolio-preview.png" alt="Portfolio Preview" width="800">
+  </a>
+</p>  
+
+👉 [Click here to view my live portfolio](https://faheem.portfolio.dev.creativekey.net/)  
