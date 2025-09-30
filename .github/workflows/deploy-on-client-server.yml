@@ -1,0 +1,21 @@
+name: Deploy Private GitHub repository to servers
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy-to-live:
+    name: Deploy to live server
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.1.0
+        with:
+          fetch-depth: 2
+      - name: Deploy to live
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ftp.creativekey.net
+          username: creati16@faheem.portfolio
+          password: "Laravel08@16"
+
