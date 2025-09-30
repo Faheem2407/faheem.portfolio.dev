@@ -15,8 +15,8 @@ class HomeController extends Controller
     public function index() {
         $intro      = Introduction::first();
         $about      = About::first();
-        $skills     = Skill::get();
-        $projects   = Project::get();
+        $skills     = Skill::where('status','active')->get();
+        $projects   = Project::where('status','active')->get();
         $resume     = Resume::first();
 
         return view('welcome',compact(['intro','about','skills','projects','resume']));
