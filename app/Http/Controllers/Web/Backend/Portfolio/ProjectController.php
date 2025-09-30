@@ -47,6 +47,7 @@ class ProjectController extends Controller {
             'title'       => 'required|string',
             'description' => 'nullable|string',
             'image'       => 'nullable|image|mimes:jpg,jpeg,png,svg|max:2048',
+            'link'        => 'required|string',
             'status'      => 'required|in:active,inactive',
         ]);
 
@@ -58,6 +59,7 @@ class ProjectController extends Controller {
             $project = new Project();
             $project->title = $request->title;
             $project->description = $request->description;
+            $project->link = $request->link;
             $project->status = $request->status;
 
             if ($request->hasFile('image')) {
@@ -81,6 +83,7 @@ class ProjectController extends Controller {
             'title'       => 'required|string',
             'description' => 'nullable|string',
             'image'       => 'nullable|image|mimes:jpg,jpeg,png,svg|max:2048',
+            'link'        => 'required|string',
             'status'      => 'required|in:active,inactive',
         ]);
 
@@ -92,6 +95,7 @@ class ProjectController extends Controller {
             $project = Project::findOrFail($id);
             $project->title = $request->title;
             $project->description = $request->description;
+            $project->link = $request->link;
             $project->status = $request->status;
 
             if ($request->hasFile('image')) {

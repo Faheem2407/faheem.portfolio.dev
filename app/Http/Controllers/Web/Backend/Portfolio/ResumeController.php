@@ -32,12 +32,12 @@ class ResumeController extends Controller
                 deleteImage($resume->file);
             }
 
-            $filePath = storeFile($request->file('file'), 'resumes');
+            $filePath = storeFile($request->file('file'), 'resume');
             $data['file'] = $filePath;
         }
 
         $resume->update($data);
 
-        return redirect()->back()->with('success', 'Resume updated successfully.');
+        return redirect()->back()->with('t-success', 'Resume updated successfully.');
     }
 }

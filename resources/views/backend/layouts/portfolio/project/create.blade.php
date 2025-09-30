@@ -40,6 +40,16 @@
                         </div>
 
                         <div class="input-style-1 mt-4">
+                            <label for="link">Project Link:</label>
+                            <input type="text" placeholder="Enter link" id="link"
+                                class="form-control @error('link') is-invalid @enderror" name="link"
+                                value="{{ old('link') }}">
+                            @error('link')
+                                <span class="invalid-feedback">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="input-style-1 mt-4">
                             <label for="status">Status:</label>
                             <select name="status" id="status" class="form-control @error('status') is-invalid @enderror">
                                 <option value="active" {{ old('status')=='active' ? 'selected' : '' }}>Active</option>
