@@ -27,6 +27,7 @@ class IntroductionController extends Controller
         $validator = Validator::make($request->all(), [
             'title'    => 'required|string|max:255',
             'subtitle' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -37,6 +38,7 @@ class IntroductionController extends Controller
             $intro = Introduction::firstOrNew();
             $intro->title    = $request->title;
             $intro->subtitle = $request->subtitle;
+            $intro->description = $request->description;
             $intro->save();
 
             return back()->with('t-success', 'Introduction updated successfully.');

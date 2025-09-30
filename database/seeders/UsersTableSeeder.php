@@ -20,38 +20,11 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Admin',
                 'email' => 'admin@admin.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('12345678'),
+                'password' => Hash::make('1234567808'),
                 'role' => 'admin',
                 'remember_token' => Str::random(10),
                 'created_at' => now(),
-            ],
-            [
-                'name' => 'User',
-                'email' => 'user@user.com',
-                'email_verified_at' => now(),
-                'password' => Hash::make('12345678'),
-                'role' => 'user',
-                'remember_token' => Str::random(10),
-                'created_at' => now(),
-            ],
-            [
-                'name' => 'RKB',
-                'email' => 'reshikash300@gmail.com',
-                'email_verified_at' => now(),
-                'password' => Hash::make('12345678'),
-                'role' => 'user',
-                'remember_token' => Str::random(10),
-                'created_at' => now(),
-            ],
-            [
-                'name' => 'Md Mizanur Rahman',
-                'email' => 'mr7517218@gmail.com',
-                'email_verified_at' => now(),
-                'password' => Hash::make('12345678'),
-                'role' => 'user',
-                'remember_token' => Str::random(10),
-                'created_at' => now(),
-            ],
+            ]
         ]);
     }
 }

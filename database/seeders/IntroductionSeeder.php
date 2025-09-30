@@ -12,6 +12,7 @@ class IntroductionSeeder extends Seeder
         Introduction::create([
             'title' => 'Hello, I’m',
             'subtitle' => 'Fahim',
+            'description' => 'Laravel Developer | Backend Specialist | Problem Solver'
         ]);
     }
 }

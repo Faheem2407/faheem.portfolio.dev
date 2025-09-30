@@ -12,5 +12,6 @@ class Introduction extends Model
     protected $fillable = [
         'title',
         'subtitle',
+        'description'
     ];
 }

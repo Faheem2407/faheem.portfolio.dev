@@ -28,7 +28,7 @@
                             <div class="row">
                                 <div class="col-md-6 mt-4">
                                     <div class="input-style-1">
-                                        <label for="title">Title:</label>
+                                        <label for="title">Greeting:</label>
                                         <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" placeholder="Enter Title" value="{{ $data->title ?? '' }}">
                                         @error('title')
                                             <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
@@ -38,9 +38,20 @@
 
                                 <div class="col-md-6 mt-4">
                                     <div class="input-style-1">
-                                        <label for="subtitle">Subtitle:</label>
+                                        <label for="subtitle">Name:</label>
                                         <input type="text" id="subtitle" name="subtitle" class="form-control @error('subtitle') is-invalid @enderror" placeholder="Enter Subtitle" value="{{ $data->subtitle ?? '' }}">
                                         @error('subtitle')
+                                            <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mt-4">
+                                    <div class="input-style-1">
+                                        <label for="description:">Professional Title:</label>
+                                        <input type="text" id="description" name="description" class="form-control @error('description') is-invalid @enderror" placeholder="Enter description" value="{{ $data->description ?? '' }}">
+                                        @error('description')
                                             <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                                         @enderror
                                     </div>

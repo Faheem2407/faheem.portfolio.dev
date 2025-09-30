@@ -77,7 +77,7 @@
         faders.forEach(fader => appearOnScroll.observe(fader));
 
         // Typing effect
-        const typedText = "Laravel Developer | Backend Specialist | Problem Solver";
+        const typedText = @json($intro->description);
         const typingElement = document.querySelector('#typing-role');
         let i = 0;
         function typeEffect() {
