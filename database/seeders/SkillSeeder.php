@@ -12,7 +12,7 @@ class SkillSeeder extends Seeder
         Skill::create(['title' => 'PHP(OOP)']);
         Skill::create(['title' => 'Laravel']);
         Skill::create(['title' => 'RESTful APIs']);
-        Skill::create(['title' => 'AI API Ingeration']);
+        Skill::create(['title' => 'AI API Integration(OPEN AI / Gemini)']);
         Skill::create(['title' => 'Authentication (JWT / Breeze / Sanctum / Passport)']);
         Skill::create(['title' => 'Database (MySQL / SQLite / MongoDB / PostgreSQL)']);
         Skill::create(['title' => 'JavaScript']);
