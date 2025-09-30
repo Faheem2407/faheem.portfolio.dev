@@ -13,7 +13,7 @@ class ResumeSeeder extends Seeder
             'title' => 'My Resume',
             'sub_title' => 'With 1.5+ years of experience in Laravel development, I have worked on numerous projects, ranging from small businesses to large-scale enterprise applications.',
             'file' => 'backend/resume/resume.pdf',
-            'updated_year' => now(),
+            'updated_year' => now()->year,
         ]);
     }
 }

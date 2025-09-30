@@ -28,7 +28,11 @@ class ResumeController extends Controller
         $data = $request->only(['title', 'sub_title', 'updated_year']);
 
         if ($request->hasFile('file')) {
-            $filePath = $request->file('file')->store('resumes', 'public');
+            if ($resume->file) {
+                deleteImage($resume->file);
+            }
+
+            $filePath = storeFile($request->file('file'), 'resumes');
             $data['file'] = $filePath;
         }
 

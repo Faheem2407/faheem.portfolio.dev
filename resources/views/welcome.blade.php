@@ -84,9 +84,10 @@
         </p>
             <div class="flex items-center justify-center gap-4">
                 
-                <a href="{{ Storage::url($resume->file) }}" download class="px-6 py-3 bg-pink-500 text-white rounded-lg font-semibold hover:bg-pink-600 transition-colors">
+                <a href="{{ asset($resume->file) }}" download class="px-6 py-3 bg-pink-500 text-white rounded-lg font-semibold hover:bg-pink-600 transition-colors">
                     Download Resume
                 </a>
+
             </div>
 
         <p class="text-gray-400 mt-4 text-sm">
