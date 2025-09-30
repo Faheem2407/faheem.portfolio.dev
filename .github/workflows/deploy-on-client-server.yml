@@ -16,6 +16,6 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ftp.creativekey.net
-          username: creati16@faheem.portfolio
-          password: "Laravel08@16"
+          username: creati16@faheem.portfolio.dev.creativekey.net
+          password: ${{ secrets.SFTP_PASSWORD }}
 
