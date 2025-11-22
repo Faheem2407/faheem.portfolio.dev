@@ -16,9 +16,9 @@ This is my personal portfolio showcasing my work, skills, and projects.
 ## Live Preview  
 
 <p align="center">
-  <a href="https://profile.dev/" target="_blank">
-    <img src="https://profile.dev/backend/images/portfolio-preview.png" alt="Portfolio Preview" width="800">
+  <a href="https://profile.dev.creativekey.net/" target="_blank">
+    <img src="https://profile.dev.creativekey.net/backend/images/portfolio-preview.png" alt="Portfolio Preview" width="800">
   </a>
 </p>  
 
-[Click to preview](https://profile.dev/)  
+[Click to preview](https://profile.dev.creativekey.net/)  
