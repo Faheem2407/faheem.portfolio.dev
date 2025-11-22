@@ -11,14 +11,14 @@ This is my personal portfolio showcasing my work, skills, and projects.
 
 ## Contributor  
 
-- <a href="https://github.com/Faheem2407" target="_blank">MD. Abed Hasan Fahim</a>  
+- <a href="https://github.com/Faheem2407" target="_blank">Faheem2407</a>  
 
 ## Live Preview  
 
 <p align="center">
-  <a href="https://faheem.portfolio.dev.creativekey.net/" target="_blank">
-    <img src="https://faheem.portfolio.dev.creativekey.net/backend/images/portfolio-preview.png" alt="Portfolio Preview" width="800">
+  <a href="https://profile.dev/" target="_blank">
+    <img src="https://profile.dev/backend/images/portfolio-preview.png" alt="Portfolio Preview" width="800">
   </a>
 </p>  
 
-👉 [Click here to view my live portfolio](https://faheem.portfolio.dev.creativekey.net/)  
+[Click to preview](https://profile.dev/)  
